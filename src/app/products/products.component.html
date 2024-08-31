@@ -1,0 +1,26 @@
+<div class="shopping-cart">
+  <h2>Shopping Cart</h2>
+  <ul class="product-list">
+    @for (product of productsList(); track $index) {
+    <li class="product-item">
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>Category: <strong>{{ product.category }}</strong></p>
+        <span class="product-price"
+          >{{ product.price | currency }}</span
+        >
+      </div>
+      <div class="quantity-control">
+        <button type="button"  class="btn" (click)="less(product)">-</button>
+        <span>{{ product.quantity }}</span>
+        <button type="button" class="btn" (click)="add(product)">+</button>
+      </div>
+    </li>
+    }
+  </ul>
+  <div class="total">
+    <span class="total-amount"
+      >TOTAL: {{ totalPrice() | currency }}</span
+    >
+  </div>
+</div>
