@@ -18,6 +18,14 @@ import { ListComponent } from '../list/list.component';
 export class FormComponent {
   name = new FormControl('', Validators.required);
   price = new FormControl('', Validators.required);
-
+  product:any;
   ngOnInit() {}
+
+  addToList() {
+    const product = {
+      name: this.name.value,
+      price: this.price.value,
+    };
+    this.product = product;
+  }
 }

@@ -9,7 +9,7 @@
       <input [formControl]="price" class="input" type="number" />
     </div>
     <div class="item_button">
-      <button type="button">Agregar a la lista</button>
+      <button type="button" (click)="addToList()">Agregar a la lista</button>
     </div>
   </form>
 </div>
@@ -18,4 +18,4 @@
   [price]="price.value"
   >></app-preview
 >
-<app-list></app-list>
+<app-list [product]="product"></app-list>
