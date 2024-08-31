@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
+import { PreviewComponent } from './products/preview/preview.component';
+import { FormComponent } from './products/form/form.component';
+import { ListComponent } from './products/list/list.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductsComponent],
+  imports: [RouterOutlet, PreviewComponent,FormComponent,ListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
