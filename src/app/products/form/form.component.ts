@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { PreviewComponent } from '../preview/preview.component';
 import { ListComponent } from '../list/list.component';
+import { Product } from '../../repository/Product';
 
 @Component({
   selector: 'app-form',
@@ -18,14 +19,13 @@ import { ListComponent } from '../list/list.component';
 export class FormComponent {
   name = new FormControl('', Validators.required);
   price = new FormControl('', Validators.required);
-  product:any;
+  product!: Product;
   ngOnInit() {}
 
   addToList() {
-    const product = {
-      name: this.name.value,
-      price: this.price.value,
+    this.product = {
+      name: this.name.value || '',
+      price: this.price.value || '',
     };
-    this.product = product;
   }
 }

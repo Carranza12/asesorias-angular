@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Product } from '../../repository/Product';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +10,9 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent implements OnChanges{
-  @Input() product!:any;
+  @Input() product!:Product;
 
-  list:any[] = [];
+  list:Product[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes["product"]){
